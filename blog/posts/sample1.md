@@ -1,3 +1,8 @@
+title: This is a title
+date: 2018-06-12
+subtitle: This a subtitle
+
+
 # An exhibit of Markdown
 
 This note demonstrates some of what [Markdown][1] is capable of doing.

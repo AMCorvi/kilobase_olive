@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [  `which virtualenv` == "via;sldkjfrtualenv not found" ];
+  then
+    echo "virtualenv not installed on the terminal"
+  else
+    virtualenv --python=python3.6 kilobase_olive_env && \
+      source kilobase_olive_env/bin/activate&& \
+      pip install -r requirements.txt
+fi
+
+
+

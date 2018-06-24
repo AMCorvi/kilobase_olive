@@ -7,9 +7,13 @@
 
     <!-- Header -->
     <div id="header">
-        <h1>Blog Post Title</h1>
-        <h3>Subtitle</h3>
-        <h4 id="date">date</h4>
+        <h1>{{post.title}}</h1>
+        {% if post.subtitle %}
+            <h3>{{post.subtitle}}</h3>
+        {% endif %}
+        {% if post.date %}
+            <h4>{{post.date}}</h4>
+        {% endif %}
     </div>
 
     <!-- Content -->
