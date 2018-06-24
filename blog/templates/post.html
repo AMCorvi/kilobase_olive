@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block head %}
+{% endblock head %}
+
+{% block content %}
+
+    <!-- Header -->
+    <div id="header">
+        <h1>Blog Post Title</h1>
+        <h3>Subtitle</h3>
+        <h4 id="date">date</h4>
+    </div>
+
+    <!-- Content -->
+    <div id="content">
+        {{ post_content }}
+    </div>
+{% endblock content%}
