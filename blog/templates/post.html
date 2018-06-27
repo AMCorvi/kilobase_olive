@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 
 {% block head %}
+  <link rel="stylesheet" href="{{ url_for("static", filename="css/post.css")}}"/>
+  <link rel="stylesheet" href="{{ url_for("static", filename="css/code.css") }}"/>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 {% endblock head %}
 
 {% block content %}
@@ -18,6 +21,9 @@
 
     <!-- Content -->
     <div id="content">
-        {{ post.html }}
+        {{ post.html|safe }}
     </div>
+
+    <!-- Scripts -->
+    <script>hljs.initHighlightingOnLoad();</script>
 {% endblock content%}

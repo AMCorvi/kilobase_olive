@@ -2,8 +2,10 @@ import os
 
 from flask import abort, url_for
 from werkzeug import cached_property
-import yaml
+from .sorted_dict import SortedDict
 import markdown
+from markdown.extensions.fenced_code import FencedCodeExtension
+import yaml
 
 MARKDOWN_EXTENSION = ".md"
 
@@ -13,7 +15,7 @@ class Blog(object):
         self.root_dir = root_dir
         self.file_ext = file_ext
         self._app = app
-        self._cache = {}
+        self._cache = SortedDict(key=lambda post: post.date, reverse=True)
         self._initialize_cache()
 
     @property
@@ -21,9 +23,6 @@ class Blog(object):
         return self._cache.values()
 
     def get_post_or_404(self, path):
-        """
-
-        """
         try:
             return self._cache[path]
         except KeyError:
@@ -50,7 +49,7 @@ class Post(object):
     def html(self):
         with open(self.filepath, "r") as fin:
             content = fin.read().split("\n\n", 1)[1].strip()
-        return markdown.markdown(content)
+        return markdown.markdown(content, extensions=[FencedCodeExtension()])
 
     def _initialize_metadata(self):
         content = ""
@@ -63,5 +62,4 @@ class Post(object):
 
     @cached_property
     def url(self):
-        print(self.urlpath)
         return url_for("post", path=self.urlpath)
