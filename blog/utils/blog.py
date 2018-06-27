@@ -60,6 +60,5 @@ class Post(object):
                 content += line
         self.__dict__.update(yaml.load(content))
 
-    @cached_property
-    def url(self):
-        return url_for("post", path=self.urlpath)
+    def url(self, _external = False):
+        return url_for("post", path=self.urlpath, _external=_external)
