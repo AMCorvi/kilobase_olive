@@ -1,1 +1,4 @@
 kilobase_olive_env/
+__pycache__
+*.pyc
+.notes
