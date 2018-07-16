@@ -1,0 +1,36 @@
+
+<div class="container">
+  <!-- Level 1: FOR LOOP to generate row -->
+  {% for x1 in range(2) %}
+  <div class="row mx-4">
+    <!-- Level2: FOR LOOP to generate columns -->
+    {% for x2 in range(4) %}
+    <div class="col-sm-6 col-lg-3 mb-4">
+
+      <div class="card  border-secondary shadow-sm d-flex">
+        <a href="">
+        <img class=" border-warning card-img" src="https://picsum.photos/200/200/?image{{x2}}{{x1}}00" alt="Custom card sizing example">
+        </a>
+        <div class="card-body">
+          <div class="card-title">Project{{x1}}{{x2}}</div>
+          <p class="card-subtitle">The section headings of these responses are intended to correspond with where they would be located in the main document if they were not obsoleted.</p>
+          <p class="card-text"> </p>
+          <div class="row">
+            <a href="#" class=" col mx-auto btn btn-primary card-link cta">
+                View Project
+                <i class="mi mi-ChevronRight"></i>
+              </a>
+            <a href="#" class=" col mx-auto  card-link cta btn btn-outline-secondary">
+                Source
+                <i class="mi mi-ChevronRight"></i>
+              </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+  {% endfor %}
+
+</div>

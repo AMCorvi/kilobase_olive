@@ -1,0 +1,20 @@
+<div class="container">
+<!-- First Level FOR LOOP to generate row -->
+{% for outerx in range(0,3)%}
+  <div class="row d-flex justify-content-center mx-4 my-0">
+    {% for innerx in range(0,3)%}
+      <div class="jumbotron col-xs-12 col-md-4 m-xs-0 mb-0 p-0 shadow-md-lg"
+           style="background-image: url(https://picsum.photos/200/200/?image{{outerx}}{{innerx}}00);
+           background-size: cover;
+           background-position: center;
+           background-color: black " >
+           <h1 class="display-6 text-center">Factory Functions</h1>
+           <p class="lead text-primary text-center">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+           <a class="btn btn-secondary btn-lg " href="#" role="button">Read Post</a>
+      </div>
+    {% endfor %}
+  </div>
+{% endfor %}
+
+</div>
+<!-- end of container -->
